@@ -24,7 +24,7 @@
                 <td><?= $product->salary ?></td>
                 <td><?= $product->brand ?></td>
                 <td><?= $product->offer ?></td>
-                <td><a href="update.php? serial=<?= $product->serial ?>">Edit</a>|<a href="delete.php? serial=<?= $product->serial ?>">Delete</a></td>
+                <td><a href="update.php?serial=<?= $product->serial ?>">Edit</a>|<a href="delete.php?serial=<?= $product->serial ?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

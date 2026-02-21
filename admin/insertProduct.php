@@ -38,7 +38,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo 'Upload valid image';
     }
 } else {
-    header('Location:addProduct.php');
+    header('Location:index.php');
 }
-// include 'varsheaders.php';
-$selectQuery = $pdo->prepare('SELECT * FROM products');

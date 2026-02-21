@@ -23,8 +23,8 @@
 
     include('varsheaders.php');
     $Serial = $_GET['serial'];
-    $selectUserQuey = $pdo->prepare('SELECT * FROM products WHERE serial=Serial');
-    // $selectUserQuey->bindParam(':serial', $serial);
+    $selectUserQuey = $pdo->prepare('SELECT * FROM products WHERE serial=:serial');
+    $selectUserQuey->bindParam(':serial', $Serial);
     $selectUserQuey->execute();
     $selectUserQuey->setFetchMode(PDO::FETCH_CLASS, 'product');
     $products = $selectUserQuey->fetchAll();
@@ -266,9 +266,8 @@
                         <h2>Update Prouct</h2>
                         <p>Check out the comments for line by line explanations. Form-related code starts on line 145.</p>
                     </div>
-                    <form class="form" action="insertProduct.php" method="post" enctype="multipart/form-data" novalidate>
-                        <input type="text" placeholder="serial" class="form__input" id="name" name="serial" required />
-                        <label for="name" class="form__label">serial</label>
+                    <form class="form" action="updateProduct.php" method="post" enctype="multipart/form-data" novalidate>
+                        <input type="hidden" name="serial" value='<?php echo $product->serial ?>' />
                         <input type="file" placeholder="Image" class="form__input" id="email" name="img" required />
                         <label for="email" class="form__label">Image</label>
                         <input type="text" placeholder="Name" class="form__input" id="subject" name="name" value='<?php echo $product->name ?>' required />
