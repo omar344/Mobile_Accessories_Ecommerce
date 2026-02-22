@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (in_array($imgExt, $allowedExt)) {
         //here everything is ok
+        $status = 'pending';
         $insertQuery = $pdo->prepare("INSERT INTO products (serial,name,categoryName,brand,img,status,salary,offer) VALUES (:serial,:name,:categoryName,:brand,:img,:status,:salary,:offer)");
         $insertQuery->bindParam(':serial', $serial);
         $insertQuery->bindParam(':name', $name);

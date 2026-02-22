@@ -11,6 +11,7 @@
             <th scope="col">salary</th>
             <th scope="col">brand</th>
             <th scope="col">offer</th>
+            <th scope="col">status</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -24,7 +25,13 @@
                 <td><?= $product->salary ?></td>
                 <td><?= $product->brand ?></td>
                 <td><?= $product->offer ?></td>
-                <td><a href="update.php?serial=<?= $product->serial ?>">Edit</a>|<a href="delete.php?serial=<?= $product->serial ?>">Delete</a></td>
+                <td><?= $product->status ?></td>
+                <td>
+                    <a href="update.php?serial=<?= $product->serial ?>">Edit</a>|<a href="delete.php?serial=<?= $product->serial ?>">Delete</a>
+                    <?php if ($product->status !== 'available') : ?>
+                        |<a href="approveProduct.php?serial=<?= $product->serial ?>">Approve</a>
+                    <?php endif; ?>
+                </td>
             </tr>
         <?php endforeach; ?>
     </tbody>

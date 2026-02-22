@@ -28,4 +28,5 @@ INSERT INTO `products` (`serial`, `name`, `categoryName`, `brand`, `img`, `statu
 ('ACC-002', 'Wireless Earbuds',          'acc',    'SoundPro',   'ITI-053329b356be93742d9dc3e5ed0c8b412bd5dae95c96fb67e0b199d99d81bac8.jpg', 'available', 49.99, 10.00),
 ('MOB-001', 'Tempered Glass Protector',  'mobile', 'ShieldPlus', 'ITI-0b2ae1bb883fc7c01bdd8fb5d30c2cd54a6ab7248f1881af48cad0b3c2ffd6be.jpg', 'available', 14.99,  2.00),
 ('MOB-002', 'Fast Charge Cable 3-Pack',  'mobile', 'ChargeFast', 'ITI-23b6f5179303a2f98f8f7eff63cd610c39565d032b0c09540f68526f54244145.jpg', 'available', 19.99,  4.00),
-('LAP-001', 'Laptop Stand Adjustable',   'laptop', 'DeskMate',   'ITI-27f2bf2ec003d1f34a424581dc3334f825ad6cf3dc6d2519f1173646bdcd8874.jpg', 'available', 39.99,  8.00);
+('LAP-001', 'Laptop Stand Adjustable',   'laptop', 'DeskMate',   'ITI-27f2bf2ec003d1f34a424581dc3334f825ad6cf3dc6d2519f1173646bdcd8874.jpg', 'available', 39.99,  8.00),
+('MOB-003', 'MagSafe Wireless Charger',  'mobile', 'ChargeFast', 'ITI-23b6f5179303a2f98f8f7eff63cd610c39565d032b0c09540f68526f54244145.jpg', 'pending',  34.99,  6.00);
