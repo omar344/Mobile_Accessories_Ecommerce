@@ -1,5 +1,6 @@
 <?php
-require('include/config.php');
+session_start();
+require('connection.php');
 $errors = [];
 ?>
 <!DOCTYPE html>
@@ -28,14 +29,13 @@ $errors = [];
                     $username = $_POST['username'];
                     $password = $_POST['password'];
                     if (!empty($username) && !empty($password)) {
-                        $sql = 'SELECT * FROM customer WHERE userName = ?'; //->
-                        $stmt = $conn->prepare($sql);
-                        $stmt->bind_param('s', $username);
+                        $sql = 'SELECT * FROM customer WHERE userName = :userName';
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->bindParam(':userName', $username);
                         $stmt->execute();
-                        $result = $stmt->get_result();
+                        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                        if ($result->num_rows === 1) {
-                            $user = $result->fetch_assoc();
+                        if ($user) {
                             $storedPassword = $user['password'];
 
                             if (password_verify($password, $storedPassword)) {
